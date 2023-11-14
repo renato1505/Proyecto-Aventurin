@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228dd6d69711e0c4fb457a4c660d46bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BalaPrefab: {fileID: 8243249101771581226, guid: 2309360cdb311d14f87b1e8d96fe2ed0, type: 3}
   Velocidad: 1
   FuerzaSalto: 150
 --- !u!95 &189780649
