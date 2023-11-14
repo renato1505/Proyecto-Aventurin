@@ -8,6 +8,7 @@ public class PJ_Movimiento : MonoBehaviour
     public GameObject BalaPrefab;
     public float Velocidad;
     public float FuerzaSalto;
+    public float prueba;
 
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
