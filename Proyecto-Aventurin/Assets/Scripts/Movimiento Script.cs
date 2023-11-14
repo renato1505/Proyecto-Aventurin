@@ -51,6 +51,7 @@ public class PJ_Movimiento : MonoBehaviour
             Saltar();
         }
 
+
         // - Disparar -
 
         if (Input.GetKey(KeyCode.Space) && Time.time > Ult_Disparo + 0.25f)
