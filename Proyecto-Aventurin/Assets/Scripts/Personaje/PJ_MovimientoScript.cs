@@ -8,6 +8,7 @@ public class PJ_Movimiento : MonoBehaviour
     public GameObject BalaPrefab;
     public float Velocidad;
     public float FuerzaSalto;
+    public float AlturaMaxima;
 
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
@@ -20,12 +21,10 @@ public class PJ_Movimiento : MonoBehaviour
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
-
     }
 
     void Update()
     {
-
         // - Movimiento -
 
         Mov_Horizontal = Input.GetAxisRaw("Horizontal");
@@ -34,6 +33,7 @@ public class PJ_Movimiento : MonoBehaviour
         else if (Mov_Horizontal > 0.0f) transform.localScale = new Vector3(1.0f,1.0f, 1.0f);
 
         Animator.SetBool("Val_Correr", Mov_Horizontal != 0.0f);
+
 
         // - Validacion del salto -
 
@@ -45,6 +45,7 @@ public class PJ_Movimiento : MonoBehaviour
         { 
             Val_Salto = false;
         }
+
 
         // - Salto -
 
@@ -60,6 +61,15 @@ public class PJ_Movimiento : MonoBehaviour
         {
             Disparar();
             Ult_Disparo = Time.time;
+        }
+
+
+        // - Altura -
+
+        if (transform.position.y < AlturaMaxima)
+        {
+            Destroy(gameObject);
+            PerderJuego();
         }
     }
 
@@ -82,7 +92,21 @@ public class PJ_Movimiento : MonoBehaviour
     public void Hit()
     {
         Vida = Vida - 1;
-            if (Vida == 0) Destroy(gameObject);
+        if (Vida == 0)
+        {
+            PerderJuego();
+            Destroy(gameObject);
+        }
+    }
+
+    public void PerderJuego()
+    {
+        ControladorDeJuego controladorDeJuego = FindObjectOfType<ControladorDeJuego>();
+
+        if (controladorDeJuego != null)
+        {
+            controladorDeJuego.PerderJuego();
+        }
     }
 
     private void FixedUpdate()
