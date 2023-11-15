@@ -185,3 +185,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BalaVelocidad: 2
   BalaColision: 
+  BalaSonido: {fileID: 8300000, guid: cd079ea8f41e03645ba9a0ee78341142, type: 3}

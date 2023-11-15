@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BalaScript : MonoBehaviour
+public class PJ_BalaScript : MonoBehaviour
 {
   
     public float BalaVelocidad;
+    public AudioClip BalaSonido;
     public string BalaColision;
 
     private Rigidbody2D Rigidbody2D;
@@ -13,7 +14,7 @@ public class BalaScript : MonoBehaviour
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
-
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(BalaSonido);
     }
 
     private void FixedUpdate()
@@ -38,7 +39,7 @@ public class BalaScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        BalaScript otraBala = collision.GetComponent<BalaScript>();
+        PJ_BalaScript otraBala = collision.GetComponent<PJ_BalaScript>();
 
         if (otraBala != null && otraBala.BalaColision == BalaColision)
         {
@@ -46,7 +47,7 @@ public class BalaScript : MonoBehaviour
         }
 
         PJ_Movimiento Personaje = collision.GetComponent<PJ_Movimiento>();
-        EnemigoMovimiento Enemigo = collision.GetComponent<EnemigoMovimiento>();
+        EN_Movimiento Enemigo = collision.GetComponent<EN_Movimiento>();
         if (Personaje != null)
         {
             Personaje.Hit();

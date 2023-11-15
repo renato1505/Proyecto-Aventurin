@@ -6,12 +6,14 @@ public class EN_BalaScript : MonoBehaviour
 {
     public float BalaVelocidad;
     public string BalaColision;
+    public AudioClip BalaSonido;
 
     private Rigidbody2D Rigidbody2D;
     private Vector3 Direccion;
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(BalaSonido);
 
     }
 
@@ -45,7 +47,7 @@ public class EN_BalaScript : MonoBehaviour
         }
 
         PJ_Movimiento Personaje = collision.GetComponent<PJ_Movimiento>();
-        EnemigoMovimiento Enemigo = collision.GetComponent<EnemigoMovimiento>();
+        EN_Movimiento Enemigo = collision.GetComponent<EN_Movimiento>();
         if (Personaje != null)
         {
             Personaje.Hit();

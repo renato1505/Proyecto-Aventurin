@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemigoMovimiento : MonoBehaviour
+public class EN_Movimiento : MonoBehaviour
 {
     public GameObject Personaje;
     public GameObject BalaPrefab;
@@ -12,7 +12,7 @@ public class EnemigoMovimiento : MonoBehaviour
 
     private void Update()
     {
-        // - Apuntar -
+        // - Movimiento -
 
         if (Personaje == null) return;
 

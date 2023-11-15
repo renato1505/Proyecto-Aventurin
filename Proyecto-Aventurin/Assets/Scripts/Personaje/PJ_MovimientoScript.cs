@@ -76,7 +76,7 @@ public class PJ_Movimiento : MonoBehaviour
         else direccion = Vector3.left;
 
         GameObject bullet = Instantiate(BalaPrefab, transform.position + direccion * 0.1f, Quaternion.identity);
-        bullet.GetComponent<BalaScript>().SetDirection(direccion);
+        bullet.GetComponent<PJ_BalaScript>().SetDirection(direccion);
     }
 
     public void Hit()
