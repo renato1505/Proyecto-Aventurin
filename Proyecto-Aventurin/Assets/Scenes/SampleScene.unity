@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BalaPrefab: {fileID: 8243249101771581226, guid: 2309360cdb311d14f87b1e8d96fe2ed0, type: 3}
-  Velocidad: 1
+  Velocidad: 2
   FuerzaSalto: 150
 --- !u!95 &189780649
 Animator:
@@ -344,6 +344,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Personaje: {fileID: 189780643}
   BalaPrefab: {fileID: 8439814905006337530, guid: 2f1fee386130c4a48937e97f14ee6319, type: 3}
+  rangoPersecucion: 1.5
+  velocidadPersecucion: 0.5
 --- !u!70 &405672895
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
