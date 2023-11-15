@@ -20,8 +20,6 @@ AnimationClip:
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
-    - time: 0
-      value: {fileID: 1376578727, guid: 22036f1716a5f4443aa7dd3afa0affb2, type: 3}
     - time: 0.083333336
       value: {fileID: 160335737, guid: 22036f1716a5f4443aa7dd3afa0affb2, type: 3}
     - time: 0.16666667
@@ -56,7 +54,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1376578727, guid: 22036f1716a5f4443aa7dd3afa0affb2, type: 3}
     - {fileID: 160335737, guid: 22036f1716a5f4443aa7dd3afa0affb2, type: 3}
     - {fileID: -524604779, guid: 22036f1716a5f4443aa7dd3afa0affb2, type: 3}
     - {fileID: -656724853, guid: 22036f1716a5f4443aa7dd3afa0affb2, type: 3}
@@ -87,4 +84,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: DestruirBala
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: f4fca2721515e364c8e0db9c45853449, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

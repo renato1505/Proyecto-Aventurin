@@ -14,6 +14,7 @@ public class PJ_Movimiento : MonoBehaviour
     private float Mov_Horizontal;
     private bool Val_Salto;
     private float Ult_Disparo;
+    private int Vida = 5;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class PJ_Movimiento : MonoBehaviour
     {
 
         // - Movimiento -
+
         Mov_Horizontal = Input.GetAxisRaw("Horizontal");
 
         if (Mov_Horizontal < 0.0f) transform.localScale = new Vector3(-1.0f,1.0f, 1.0f);
@@ -75,6 +77,12 @@ public class PJ_Movimiento : MonoBehaviour
 
         GameObject bullet = Instantiate(BalaPrefab, transform.position + direccion * 0.1f, Quaternion.identity);
         bullet.GetComponent<BalaScript>().SetDirection(direccion);
+    }
+
+    public void Hit()
+    {
+        Vida = Vida - 1;
+            if (Vida == 0) Destroy(gameObject);
     }
 
     private void FixedUpdate()
