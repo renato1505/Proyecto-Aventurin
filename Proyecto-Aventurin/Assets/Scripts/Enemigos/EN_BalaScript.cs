@@ -5,16 +5,15 @@ using UnityEngine;
 public class EN_BalaScript : MonoBehaviour
 {
     public float BalaVelocidad;
-    public string BalaColision;
-    public AudioClip BalaSonidos;
+    public AudioClip BalaSonido;
 
     private Rigidbody2D Rigidbody2D;
     private Vector3 Direccion;
+
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(BalaSonidos);
-
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(BalaSonido);
     }
 
     private void FixedUpdate()
@@ -26,38 +25,9 @@ public class EN_BalaScript : MonoBehaviour
         Direccion = direccion;
     }
 
-    public void SetBalaColision(string balaColision)
-    {
-        BalaColision = balaColision;
-    }
-
     public void DestruirBala()
     {
         Destroy(gameObject);
 
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        EN_BalaScript otraBala = collision.GetComponent<EN_BalaScript>();
-
-        if (otraBala != null && otraBala.BalaColision == BalaColision)
-        {
-            return;
-        }
-
-        PJ_Movimiento Personaje = collision.GetComponent<PJ_Movimiento>();
-        EN_Movimiento Enemigo = collision.GetComponent<EN_Movimiento>();
-        if (Personaje != null)
-        {
-            Personaje.Hit();
-        }
-        if (Enemigo != null)
-        {
-            Enemigo.Hit();
-        }
-        DestruirBala();
-    }
-
-
 }

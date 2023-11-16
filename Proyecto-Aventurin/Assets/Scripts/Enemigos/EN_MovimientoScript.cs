@@ -9,6 +9,7 @@ public class EN_Movimiento : MonoBehaviour
 
     public float rangoPersecucion; 
     public float velocidadPersecucion;
+    public float AlturaMaxima;
 
     private float Ult_Bala;
     private int Vida = 2;
@@ -39,6 +40,14 @@ public class EN_Movimiento : MonoBehaviour
         {
             Disparar();
             Ult_Bala = Time.time;
+        }
+
+
+        // - Altura -
+
+        if (transform.position.y < AlturaMaxima)
+        {
+            Destroy(gameObject);
         }
     }
 

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7858634929183812005}
   - component: {fileID: 6050425156552529799}
   - component: {fileID: 191831817798607028}
-  - component: {fileID: -1201332852025744519}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Untagged
@@ -188,18 +187,4 @@ MonoBehaviour:
   BalaPrefab: {fileID: 8439814905006337530, guid: 2f1fee386130c4a48937e97f14ee6319, type: 3}
   rangoPersecucion: 1.5
   velocidadPersecucion: 0.5
---- !u!114 &-1201332852025744519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878032466587994749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebe1f63fb433e7a4284fa8cfe72b8aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BalaVelocidad: 2
-  BalaColision: 
-  BalaSonido: {fileID: 8300000, guid: cd079ea8f41e03645ba9a0ee78341142, type: 3}
+  AlturaMaxima: -10
