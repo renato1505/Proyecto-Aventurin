@@ -25,6 +25,17 @@ public class EN_BalaScript : MonoBehaviour
         Direccion = direccion;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PJ_Movimiento personaje = collision.GetComponent<PJ_Movimiento>();
+
+        if (personaje != null)
+        {
+            personaje.Hit();
+        }
+        DestruirBala();
+    }
+
     public void DestruirBala()
     {
         Destroy(gameObject);
