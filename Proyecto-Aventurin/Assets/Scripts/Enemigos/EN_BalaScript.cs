@@ -6,14 +6,14 @@ public class EN_BalaScript : MonoBehaviour
 {
     public float BalaVelocidad;
     public string BalaColision;
-    public AudioClip BalaSonido;
+    public AudioClip BalaSonidos;
 
     private Rigidbody2D Rigidbody2D;
     private Vector3 Direccion;
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(BalaSonido);
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(BalaSonidos);
 
     }
 

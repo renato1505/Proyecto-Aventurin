@@ -11,7 +11,7 @@ public class EN_Movimiento : MonoBehaviour
     public float velocidadPersecucion;
 
     private float Ult_Bala;
-    private int Vida = 3;
+    private int Vida = 2;
 
     private void Update()
     {

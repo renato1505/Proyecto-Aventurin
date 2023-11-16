@@ -7,15 +7,17 @@ public class PJ_Movimiento : MonoBehaviour
 
     public GameObject BalaPrefab;
     public float Velocidad;
+    public float VelocidadModificada;
     public float FuerzaSalto;
     public float AlturaMaxima;
 
+    private float VelocidadOriginal;
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
     private float Mov_Horizontal;
     private bool Val_Salto;
     private float Ult_Disparo;
-    private int Vida = 5;
+    private int Vida = 8;
 
     void Start()
     {
@@ -99,6 +101,23 @@ public class PJ_Movimiento : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("SpeedChangeTrigger"))
+        {
+            VelocidadOriginal = Velocidad;
+            Velocidad = VelocidadModificada;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("SpeedChangeTrigger"))
+        {
+            Velocidad = VelocidadOriginal;
+        }
+    }
+
     public void PerderJuego()
     {
         ControladorDeJuego controladorDeJuego = FindObjectOfType<ControladorDeJuego>();
@@ -111,7 +130,7 @@ public class PJ_Movimiento : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = new Vector2(Mov_Horizontal, Rigidbody2D.velocity.y);
+        Rigidbody2D.velocity = new Vector2(Mov_Horizontal * Velocidad, Rigidbody2D.velocity.y);
 
     }
 }
