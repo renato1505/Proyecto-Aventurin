@@ -11,13 +11,12 @@ public class PJ_Movimiento : MonoBehaviour
     public float FuerzaSalto;
     public float AlturaMaxima;
 
-    private float VelocidadOriginal;
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
     private float Mov_Horizontal;
     private bool Val_Salto;
     private float Ult_Disparo;
-    private int Vida = 8;
+    private int Vida = 10;
 
     void Start()
     {
@@ -101,20 +100,11 @@ public class PJ_Movimiento : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("SpeedChangeTrigger"))
         {
-            VelocidadOriginal = Velocidad;
             Velocidad = VelocidadModificada;
-        }
-    }
-
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("SpeedChangeTrigger"))
-        {
-            Velocidad = VelocidadOriginal;
         }
     }
 
